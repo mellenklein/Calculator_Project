@@ -1,0 +1,123 @@
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+body main {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin: 30px auto;
+  font-family: 'Helvetica'; }
+  body main::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+div.row1 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-right: 0;
+  width: 100%; }
+  div.row1:last-child {
+    margin-right: 0; }
+  div.row1 input.clearBtn {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    padding: 30px 0;
+    background: #68B15B;
+    border: 1px solid #86C37C;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-right: 0;
+    width: 25%;
+    transition: background 0.3s ease; }
+    div.row1 input.clearBtn:last-child {
+      margin-right: 0; }
+    div.row1 input.clearBtn:hover {
+      background: #80B977;
+      transition: background 0.3s ease; }
+  div.row1 div.answer {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%;
+    text-align: right;
+    height: 90px;
+    border: 1px solid #86C37C;
+    color: white;
+    font-size: 1.5em;
+    padding: 30px 20px 30px 0;
+    background: #68B15B;
+    width: 75%; }
+    div.row1 div.answer:last-child {
+      margin-right: 0; }
+
+div.row2,
+div.row3,
+div.row4,
+div.row5 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-right: 0;
+  width: 100%; }
+  div.row2:last-child,
+  div.row3:last-child,
+  div.row4:last-child,
+  div.row5:last-child {
+    margin-right: 0; }
+  div.row2 input,
+  div.row3 input,
+  div.row4 input,
+  div.row5 input {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    padding: 30px 0;
+    background: #68B15B;
+    border: 1px solid #86C37C;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-right: 0;
+    transition: background 0.3s ease;
+    width: 25%; }
+    div.row2 input:last-child,
+    div.row3 input:last-child,
+    div.row4 input:last-child,
+    div.row5 input:last-child {
+      margin-right: 0; }
+    div.row2 input:hover,
+    div.row3 input:hover,
+    div.row4 input:hover,
+    div.row5 input:hover {
+      background: #80B977;
+      transition: background 0.3s ease; }
+
+#divideBtn,
+#multBtn,
+#addBtn,
+#subtBtn {
+  color: black;
+  background: #80B977;
+  transition: color 0.3s ease; }
+  #divideBtn:hover,
+  #multBtn:hover,
+  #addBtn:hover,
+  #subtBtn:hover {
+    color: white;
+    transition: color 0.3s ease; }

@@ -3,26 +3,50 @@
   <head>
     <meta charset="utf-8">
     <title>Calculator Homework - JS</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
   </head>
   <body>
     <main>
-    <h3>Let's Do Some Math!</h3>
     <label for="num_one">First Number: </label>
     <input class="inputBox" type="text" id="num_one" value=""/>
+    <br /><br />
+    <label for="operator">Operator: </label>
+    <input class="inputBox" type="text" id="operator" value=""/>
     <br /><br />
     <label for="num_two">Second Number: </label>
     <input class="inputBox" type="text" id="num_two" value=""/>
     <br /><br />
-    <input type="submit" value="+" id="addBtn" />
-    <input type="submit" value="-" id="subtBtn" />
-    <input type="submit" value="X" id="multBtn" />
-    <input type="submit" value="/" id="divideBtn" />
-    <input type="submit" value="=" id="equalBtn" />
-    <div class="answer">
-      <br />
-      Answer: <span id="answer"></span>
+    <div class="row1">
+      <input class ="clearBtn" type="button" value="C" id="clearBtn" />
+      <div class="answer">
+         <span id="answer"></span>
+      </div>
     </div>
+    <div class="row2">
+      <input type="submit" value="7" id="sevenBtn" />
+      <input type="submit" value="8" id="eightBtn" />
+      <input type="submit" value="9" id="nineBtn" />
+      <input type="submit" value="/" id="divideBtn" />
+    </div>
+    <div class="row3">
+      <input type="submit" value="4" id="fourBtn" />
+      <input type="submit" value="5" id="fiveBtn" />
+      <input type="submit" value="6" id="sixBtn" />
+      <input type="submit" value="X" id="multBtn" />
+    </div>
+    <div class="row4">
+      <input type="submit" value="1" id="oneBtn" />
+      <input type="submit" value="2" id="twoBtn" />
+      <input type="submit" value="3" id="threeBtn" />
+      <input type="submit" value="-" id="subtBtn" />
+    </div>
+    <div class="row5">
+      <input type="submit" value="0" id="zeroBtn" />
+      <input type="submit" value="." id="decimalBtn" />
+      <input type="submit" value="=" id="equalBtn" />
+      <input type="submit" value="+" id="addBtn" />
+    </div>
+
     <script type="text/javascript" src="main.js"></script>
     </main>
   </body>

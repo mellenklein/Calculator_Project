@@ -1,0 +1,83 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "_variables.scss";
+@import "../bower_components/neat/app/assets/stylesheets/neat";
+
+body main {
+  @include outer-container(100%);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin: 30px auto;
+  // background: #80B977;
+  font-family: 'Helvetica';
+}
+
+div.row1 {
+  @include span-columns(12);
+  margin-right: 0;
+  width: 100%;
+  input.clearBtn {
+    @include span-columns(3 of 12);
+    padding: 30px 0;
+    background: $green;
+    border: 1px solid $border;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-right: 0;
+    width: 25%;
+    transition: background .3s ease;
+    &:hover {
+      background: $lightGreen;
+      transition: background .3s ease;
+    }
+  }
+  div.answer {
+    @include span-columns(9 of 12);
+    text-align: right;
+    height: 90px;
+    border: 1px solid $border;
+    color: white;
+    font-size: 1.5em;
+    padding: 30px 20px 30px 0;
+    background: $green;
+    width: 75%;
+  }
+}
+div.row2,
+div.row3,
+div.row4,
+div.row5 {
+  @include span-columns(12);
+  margin-right: 0;
+  width: 100%;
+  input {
+    @include span-columns(3 of 12);
+    padding: 30px 0;
+    background: #68B15B;
+    border: 1px solid $border;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-right: 0;
+    transition: background .3s ease;
+    width: 25%;
+    &:hover {
+      background: $lightGreen;
+      transition: background .3s ease;
+    }
+  }
+}
+
+#divideBtn,
+#multBtn,
+#addBtn,
+#subtBtn {
+  color: black;
+  background: $lightGreen;
+  transition: color .3s ease;
+  &:hover {
+    color: white;
+    transition: color .3s ease;
+  }
+}

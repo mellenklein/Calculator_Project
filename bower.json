@@ -1,0 +1,22 @@
+{
+  "name": "fri",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mellenklein/homework_week03_fri",
+  "authors": [
+    "Mary Ellen Klein <maryellenklein@gmail.com>"
+  ],
+  "description": "Calculator Homework",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "neat": "~1.7.2"
+  }
+}
