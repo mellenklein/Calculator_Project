@@ -20,6 +20,9 @@ body main {
     content: "";
     display: table; }
 
+section.hide {
+  display: none; }
+
 div.row1 {
   float: left;
   display: block;
@@ -50,6 +53,9 @@ div.row1 {
       transition: background 0.3s ease; }
     div.row1 input.clearBtn:focus {
       outline: none; }
+    div.row1 input.clearBtn:active {
+      box-shadow: inset 2px 2px 5px 1px black;
+      color: green; }
   div.row1 div.answer {
     float: left;
     display: block;
@@ -97,7 +103,8 @@ div.row5 {
     font-weight: 200;
     margin-right: 0;
     width: 25%;
-    transition: background 0.3s ease; }
+    transition: background 0.3s ease;
+    transition: box-shadow 1s ease; }
     div.row2 input:last-child,
     div.row3 input:last-child,
     div.row4 input:last-child,
@@ -108,12 +115,23 @@ div.row5 {
     div.row4 input:hover,
     div.row5 input:hover {
       background: #80B977;
-      transition: background 0.3s ease; }
+      transition: background 0s ease; }
     div.row2 input:focus,
     div.row3 input:focus,
     div.row4 input:focus,
     div.row5 input:focus {
       outline: none; }
+    div.row2 input:active,
+    div.row3 input:active,
+    div.row4 input:active,
+    div.row5 input:active {
+      box-shadow: inset 2px 2px 5px 1px black;
+      color: green; }
+  div.row2 input.equalBtn:focus,
+  div.row3 input.equalBtn:focus,
+  div.row4 input.equalBtn:focus,
+  div.row5 input.equalBtn:focus {
+    box-shadow: inset 2px 2px 5px 1px black; }
 
 #divideBtn,
 #multBtn,

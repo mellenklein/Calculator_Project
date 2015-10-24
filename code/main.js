@@ -12,13 +12,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var printAnswer = document.getElementById('answer');
   var numbers = document.getElementsByClassName('number');
   var operators = document.getElementsByClassName('operator');
-  var reset = false;
-  var a = Number(num_one.value);
   // Create a function to calculate the answer:
       // The function finds the value of num_one and num_two, converts both strings to numbers, then adds them together.
 
 //--------------Number Handler Function-----------------//
-
 // When a 'number' button is clicked:
   var handleNumberClick = function(event){
     // Update the appropriate input box to reflect the number clicked.
@@ -26,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if(num_one.value === ""){
           printAnswer.innerHTML = event.target.value;
         } else printAnswer.innerHTML += event.target.value;
-        num_one.value += event.target.value;
-        solution.value = "";
+          num_one.value += event.target.value;
+          solution.value = "";
       } else {
         num_two.value += event.target.value;
         printAnswer.innerHTML += event.target.value;

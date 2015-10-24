@@ -10,6 +10,9 @@ body main {
   margin: 30px auto;
   font-family: 'Helvetica';
 }
+section.hide {
+  display: none;
+}
 
 div.row1 {
   @include span-columns(12);
@@ -32,6 +35,10 @@ div.row1 {
     }
     &:focus {
       outline: none;
+    }
+    &:active {
+      box-shadow: inset 2px 2px 5px 1px black;
+      color: green;
     }
   }
   div.answer {
@@ -64,12 +71,23 @@ div.row5 {
     margin-right: 0;
     width: 25%;
     transition: background .3s ease;
+    transition: box-shadow 1s ease;
     &:hover {
       background: $lightGreen;
-      transition: background .3s ease;
+      transition: background 0s ease;
     }
     &:focus {
       outline: none;
+      // box-shadow: inset 2px 2px 5px 1px black;
+    }
+    &:active {
+      box-shadow: inset 2px 2px 5px 1px black;
+      color: green;
+    }
+  }
+  input.equalBtn {
+    &:focus {
+      box-shadow: inset 2px 2px 5px 1px black;
     }
   }
 }
