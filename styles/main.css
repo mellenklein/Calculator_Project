@@ -48,6 +48,8 @@ div.row1 {
     div.row1 input.clearBtn:hover {
       background: #80B977;
       transition: background 0.3s ease; }
+    div.row1 input.clearBtn:focus {
+      outline: none; }
   div.row1 div.answer {
     float: left;
     display: block;
@@ -107,6 +109,11 @@ div.row5 {
     div.row5 input:hover {
       background: #80B977;
       transition: background 0.3s ease; }
+    div.row2 input:focus,
+    div.row3 input:focus,
+    div.row4 input:focus,
+    div.row5 input:focus {
+      outline: none; }
 
 #divideBtn,
 #multBtn,

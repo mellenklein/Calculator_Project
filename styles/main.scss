@@ -8,7 +8,6 @@ body main {
   width: 100%;
   text-align: center;
   margin: 30px auto;
-  // background: #80B977;
   font-family: 'Helvetica';
 }
 
@@ -30,6 +29,9 @@ div.row1 {
     &:hover {
       background: $lightGreen;
       transition: background .3s ease;
+    }
+    &:focus {
+      outline: none;
     }
   }
   div.answer {
@@ -65,6 +67,9 @@ div.row5 {
     &:hover {
       background: $lightGreen;
       transition: background .3s ease;
+    }
+    &:focus {
+      outline: none;
     }
   }
 }
