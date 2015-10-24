@@ -1,3 +1,4 @@
+// As soon as DOM loads, trigger the code inside:
 document.addEventListener("DOMContentLoaded", function(event) {
   // Set variables to select each element on the page:
   var num_one = document.getElementById('num_one');
@@ -10,86 +11,62 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var equalBtn = document.getElementById('equalBtn');
   var printAnswer = document.getElementById('answer');
   var numbers = document.getElementsByClassName('number');
+  var operators = document.getElementsByClassName('operator');
+  var reset = false;
+  var a = Number(num_one.value);
   // Create a function to calculate the answer:
       // The function finds the value of num_one and num_two, converts both strings to numbers, then adds them together.
 
-//--------------Number Handler Functions-----------------//
+//--------------Number Handler Function-----------------//
 
-// When a number button is clicked:
-
-// var handleClickNumber = function(){
-//   var value = event.target.value;
-//   if(operator.value === ""){
-//     num_one.value += value;
-//   } else num_two.value += value;
-// }
-
+// When a 'number' button is clicked:
   var handleNumberClick = function(event){
-    //Update the appropriate input box to reflect the number clicked.
+    // Update the appropriate input box to reflect the number clicked.
       if(operator.value === ""){
+        if(num_one.value === ""){
+          printAnswer.innerHTML = event.target.value;
+        } else printAnswer.innerHTML += event.target.value;
         num_one.value += event.target.value;
+        solution.value = "";
       } else {
         num_two.value += event.target.value;
+        printAnswer.innerHTML += event.target.value;
       }
-    //Then print the number to the answer box.
-    printAnswer.innerHTML += event.target.value;
   }
 
 //----------------Operator Handler Functions------------//
-  var handleClickAdd = function(){
-    operator.value = "+";
-    printAnswer.innerHTML += " + ";
-  }
-  var handleClickSubt = function(){
-    operator.value = "-";
-    printAnswer.innerHTML += " - ";
-  }
-  var handleClickMult = function(){
-    operator.value = "*";
-    printAnswer.innerHTML += " * ";
-  }
-  var handleClickDivide = function(){
-    operator.value = "/";
-    printAnswer.innerHTML += " / "
+  var handleOperatorClick = function(event){
+  //If you click an operator while a number is already present in the answer box, then treat that number as the first input.
+    if(solution.value != ""){
+      num_one.value = solution.value;
+    }
+  //If you click an operator while an operator is already present in the answer box, then replace with new operator (prevents two consecutive operators)
+    if(operator.value != ""){
+      printAnswer.innerHTML = num_one.value;
+    }
+    operator.value = event.target.value;
+    printAnswer.innerHTML += " " + event.target.value + " ";
   }
 
 //-----------Equals Button Handler Functions---------------//
-  var addExpression = function(){
-    var sum = Number(num_one.value) + Number(num_two.value);
-    // Update the content of answer in the html to include the sum we calculated.
-    printAnswer.innerHTML = sum;
-    console.log(sum);
-}
-  var subtExpression = function() {
-    var diff = Number(num_one.value) - Number(num_two.value);
-    printAnswer.innerHTML = diff;
-    console.log(diff);
-  }
-  var multExpression = function() {
-    var prod = Number(num_one.value) * Number(num_two.value);
-    printAnswer.innerHTML = prod;
-    console.log(prod);
-  }
-  var divideExpression = function() {
-    var quotient = Number(num_one.value) / Number(num_two.value);
-    printAnswer.innerHTML = quotient;
-    console.log(quotient);
-  }
 
 // When equal button is clicked:
   var handleClickEqual = function() {
-    //if operator is a plus sign, run the add function
-    if ( operator.value === "+" ) {
-      //then run the handleClickAdd function
-      addExpression();
-    }
-    else if (operator.value === "-"){
-      subtExpression();
-    } else if (operator.value === "*"){
-      multExpression();
+    var a = Number(num_one.value);
+    var b = Number(num_two.value);
+    if (operator.value === "+") {
+      var solve = a + b;
+    } else if (operator.value === "-"){
+      var solve = a - b;
+    } else if (operator.value === "x"){
+      var solve = a * b;
     } else if (operator.value === "/"){
-      divideExpression();
+      var solve = a / b;
     }
+// Update the content of answer in the html to include the answer we calculated.
+    printAnswer.innerHTML = solve;
+    solution.value = solve;
+    clearAfterCalc();
   }
 
 // When clear button is clicked:
@@ -97,7 +74,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     num_one.value = "";
     num_two.value = "";
     operator.value = "";
+    solution.value = "";
     printAnswer.innerHTML = "";
+  }
+
+  var clearAfterCalc = function(){
+    num_one.value = "";
+    num_two.value = "";
+    operator.value = "";
   }
 
   var enter = function(){
@@ -105,24 +89,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //   handleClickEqual();
     // }
   }
-
-  var clearAfterCalc = function() {
-    // if printAnswer.innerHTML = quotient or product or sum or diff
-    // next time a number is pressed, run the clear function to clear the screen first
-  }
-
 //---------Click Handler Event Listeners---------//
 // Set the function to run everytime the button is clicked:
-addBtn.addEventListener('click', handleClickAdd);
-subtBtn.addEventListener('click', handleClickSubt);
-multBtn.addEventListener('click', handleClickMult);
-divideBtn.addEventListener('click', handleClickDivide);
-equalBtn.addEventListener('click', handleClickEqual);
 clearBtn.addEventListener('click', handleClickClear);
+equalBtn.addEventListener('click', handleClickEqual);
+
+addEventListener('keydown', function(e){
+  if(e.keyCode === 40){
+    handleClickEqual(e);
+  }
+});
 
 
+// For each number button (0-9 including .) ->
+//add an event listener so that when any of the number buttons are clicked,
+// the handleNumberClick fucntions automatically runs.
 for (var i = 0; i < numbers.length; i++) {
   numbers[i].addEventListener('click', handleNumberClick);
+}
+//Same for loop set up for the operators:
+for (var i = 0; i < operators.length; i++) {
+  operators[i].addEventListener('click', handleOperatorClick);
 }
 
 }); //End of DOM content load

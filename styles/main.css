@@ -96,8 +96,8 @@ div.row5 {
     font-size: 1.5em;
     font-weight: 200;
     margin-right: 0;
-    transition: background 0.3s ease;
-    width: 25%; }
+    width: 25%;
+    transition: background 0.3s ease; }
     div.row2 input:last-child,
     div.row3 input:last-child,
     div.row4 input:last-child,
