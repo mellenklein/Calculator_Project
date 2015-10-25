@@ -9,6 +9,9 @@ body main {
   text-align: center;
   margin: 30px auto;
   font-family: 'Helvetica';
+  background: #393D3D;
+  border-radius: 5px;
+  padding: 30px;
 }
 section.hide {
   display: none;
@@ -20,13 +23,15 @@ div.row1 {
   width: 100%;
   input.clearBtn {
     @include span-columns(3 of 12);
-    padding: 30px 0;
-    background: $green;
-    border: 1px solid $border;
+    padding: 20px 0;
+    background: #565656;
+    border: 1px solid black;
+    border-radius: 5px;
     color: white;
     font-size: 1.5em;
     font-weight: 200;
     margin-right: 0;
+    // margin-top: 20px;
     width: 25%;
     transition: background .3s ease;
     &:hover {
@@ -45,11 +50,13 @@ div.row1 {
     @include span-columns(9 of 12);
     text-align: right;
     height: 90px;
-    border: 1px solid $border;
-    color: white;
+    border: 5px solid black;
+    box-shadow: inset 0px 5px 5px 1px;
+    border-radius: 5px;
+    color: #404145;
     font-size: 1.5em;
-    padding: 30px 20px 30px 0;
-    background: $green;
+    padding: 20px 20px 20px 0;
+    background: #CADDA0;
     width: 75%;
   }
 }
@@ -62,19 +69,20 @@ div.row5 {
   width: 100%;
   input {
     @include span-columns(3 of 12);
-    padding: 30px 0;
-    background: $green;
-    border: 1px solid $border;
+    padding: 20px 0;
+    background: #252525;
+    border: 1px solid black;
+    border-radius: 5px;
     color: white;
     font-size: 1.5em;
     font-weight: 200;
-    margin-right: 0;
+    margin: 5px 0;
     width: 25%;
     transition: background .3s ease;
     transition: box-shadow 1s ease;
     &:hover {
-      background: $lightGreen;
-      transition: background 0s ease;
+      background: opacify(grey, .5);
+      transition: background .3s ease;
     }
     &:focus {
       outline: none;
@@ -86,6 +94,7 @@ div.row5 {
     }
   }
   input.equalBtn {
+    background: #FFB023;
     &:focus {
       box-shadow: inset 2px 2px 5px 1px black;
     }
@@ -96,11 +105,11 @@ div.row5 {
 #multBtn,
 #addBtn,
 #subtBtn {
-  color: black;
-  background: $lightGreen;
+  color: white;
+  background: #FF516A;
   transition: color .3s ease;
   &:hover {
-    color: white;
+    color: black;
     transition: color .3s ease;
   }
 }

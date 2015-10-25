@@ -14,7 +14,10 @@ body main {
   width: 100%;
   text-align: center;
   margin: 30px auto;
-  font-family: 'Helvetica'; }
+  font-family: 'Helvetica';
+  background: #393D3D;
+  border-radius: 5px;
+  padding: 30px; }
   body main::after {
     clear: both;
     content: "";
@@ -37,9 +40,10 @@ div.row1 {
     display: block;
     margin-right: 2.35765%;
     width: 23.23176%;
-    padding: 30px 0;
-    background: #68B15B;
-    border: 1px solid #86C37C;
+    padding: 20px 0;
+    background: #565656;
+    border: 1px solid black;
+    border-radius: 5px;
     color: white;
     font-size: 1.5em;
     font-weight: 200;
@@ -63,11 +67,13 @@ div.row1 {
     width: 74.41059%;
     text-align: right;
     height: 90px;
-    border: 1px solid #86C37C;
-    color: white;
+    border: 5px solid black;
+    box-shadow: inset 0px 5px 5px 1px;
+    border-radius: 5px;
+    color: #404145;
     font-size: 1.5em;
-    padding: 30px 20px 30px 0;
-    background: #68B15B;
+    padding: 20px 20px 20px 0;
+    background: #CADDA0;
     width: 75%; }
     div.row1 div.answer:last-child {
       margin-right: 0; }
@@ -95,13 +101,14 @@ div.row5 {
     display: block;
     margin-right: 2.35765%;
     width: 23.23176%;
-    padding: 30px 0;
-    background: #68B15B;
-    border: 1px solid #86C37C;
+    padding: 20px 0;
+    background: #252525;
+    border: 1px solid black;
+    border-radius: 5px;
     color: white;
     font-size: 1.5em;
     font-weight: 200;
-    margin-right: 0;
+    margin: 5px 0;
     width: 25%;
     transition: background 0.3s ease;
     transition: box-shadow 1s ease; }
@@ -114,8 +121,8 @@ div.row5 {
     div.row3 input:hover,
     div.row4 input:hover,
     div.row5 input:hover {
-      background: #80B977;
-      transition: background 0s ease; }
+      background: gray;
+      transition: background 0.3s ease; }
     div.row2 input:focus,
     div.row3 input:focus,
     div.row4 input:focus,
@@ -127,22 +134,27 @@ div.row5 {
     div.row5 input:active {
       box-shadow: inset 2px 2px 5px 1px black;
       color: green; }
-  div.row2 input.equalBtn:focus,
-  div.row3 input.equalBtn:focus,
-  div.row4 input.equalBtn:focus,
-  div.row5 input.equalBtn:focus {
-    box-shadow: inset 2px 2px 5px 1px black; }
+  div.row2 input.equalBtn,
+  div.row3 input.equalBtn,
+  div.row4 input.equalBtn,
+  div.row5 input.equalBtn {
+    background: #FFB023; }
+    div.row2 input.equalBtn:focus,
+    div.row3 input.equalBtn:focus,
+    div.row4 input.equalBtn:focus,
+    div.row5 input.equalBtn:focus {
+      box-shadow: inset 2px 2px 5px 1px black; }
 
 #divideBtn,
 #multBtn,
 #addBtn,
 #subtBtn {
-  color: black;
-  background: #80B977;
+  color: white;
+  background: #FF516A;
   transition: color 0.3s ease; }
   #divideBtn:hover,
   #multBtn:hover,
   #addBtn:hover,
   #subtBtn:hover {
-    color: white;
+    color: black;
     transition: color 0.3s ease; }
