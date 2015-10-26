@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 //----------------Operator Handler Functions------------//
   var handleOperatorClick = function(event){
-  //If you click an operator while a number is already present in the answer box, then treat that number as the first input.
+  //If you click an operator while a number is already present in the answer box, then treat that number as the first input (allows continuous calculations)
     if(solution.value != ""){
       num_one.value = solution.value;
     }
@@ -89,10 +89,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
       handleClickEqual(e);
     }
   }
+  var spaceClear = function(e){
+    if(e.keyCode === 32){
+      e.preventDefault();
+      handleClickClear(e);
+    }
+  }
 
-  var handleNumberKeypress = function(f){
+  var handleNumberKeypress = function(e){
     // This function is currently cancelling out the enter function above so I commented out its eventListener for now.
-    if(f.keyCode === 49){
+    if(e.keyCode === 49){
       var keyValue = 1;
     }
     //other keycodes go here//
@@ -106,13 +112,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         num_two.value += keyValue;
         printAnswer.innerHTML += keyValue;
       }
-      f.preventDefault();
+      e.preventDefault();
   }
 
 
 //---------Click Handler Event Listeners---------//
 // Set the function to run everytime the button is clicked:
 clearBtn.addEventListener('click', handleClickClear);
+addEventListener('keydown', spaceClear)
 equalBtn.addEventListener('click', handleClickEqual);
 addEventListener('keydown', enter);
 
@@ -125,7 +132,6 @@ addEventListener('keydown', enter);
 for (var i = 0; i < numbers.length; i++) {
   numbers[i].addEventListener('click', handleNumberClick);
 }
-
 //Same for loop set up for the operators:
 for (var i = 0; i < operators.length; i++) {
   operators[i].addEventListener('click', handleOperatorClick);
