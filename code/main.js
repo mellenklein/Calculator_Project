@@ -59,8 +59,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       var solve = a * b;
     } else if (operator.value === "/"){
       var solve = a / b;
+    } else if (operator.value === ""){
+      var solve = solution.value;
     }
-// Update the content of answer in the html to include the answer we calculated.
+// Update the content of answer in the html to display the answer we calculated.
     printAnswer.innerHTML = solve;
     solution.value = solve;
     clearAfterCalc();
@@ -81,21 +83,40 @@ document.addEventListener("DOMContentLoaded", function(event) {
     operator.value = "";
   }
 
-  var enter = function(){
-    // if(keyCode === 13){
-    //   handleClickEqual();
-    // }
+  var enter = function(e){
+    if(e.keyCode === 13){
+      e.preventDefault();
+      handleClickEqual(e);
+    }
   }
+
+  var handleNumberKeypress = function(f){
+    // This function is currently cancelling out the enter function above so I commented out its eventListener for now.
+    if(f.keyCode === 49){
+      var keyValue = 1;
+    }
+    //other keycodes go here//
+      if(operator.value === ""){
+        if(num_one.value === ""){
+          printAnswer.innerHTML = keyValue;
+        } else printAnswer.innerHTML += keyValue;
+          num_one.value += keyValue;
+          solution.value = "";
+      } else {
+        num_two.value += keyValue;
+        printAnswer.innerHTML += keyValue;
+      }
+      f.preventDefault();
+  }
+
+
 //---------Click Handler Event Listeners---------//
 // Set the function to run everytime the button is clicked:
 clearBtn.addEventListener('click', handleClickClear);
 equalBtn.addEventListener('click', handleClickEqual);
+addEventListener('keydown', enter);
 
-addEventListener('keydown', function(e){
-  if(e.keyCode === 40){
-    handleClickEqual(e);
-  }
-});
+// addEventListener('keydown', handleNumberKeypress);
 
 
 // For each number button (0-9 including .) ->
@@ -104,6 +125,7 @@ addEventListener('keydown', function(e){
 for (var i = 0; i < numbers.length; i++) {
   numbers[i].addEventListener('click', handleNumberClick);
 }
+
 //Same for loop set up for the operators:
 for (var i = 0; i < operators.length; i++) {
   operators[i].addEventListener('click', handleOperatorClick);

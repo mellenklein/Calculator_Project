@@ -2,16 +2,22 @@
 @import "_variables.scss";
 @import "../bower_components/neat/app/assets/stylesheets/neat";
 
+body {
+  background: #fff;
+}
+
 body main {
   @include outer-container(100%);
   max-width: 400px;
   width: 100%;
   text-align: center;
-  margin: 30px auto;
-  font-family: 'Helvetica';
-  background: #393D3D;
+  margin: 50px auto;
+  font-family: 'Exo', sans-serif;
+  // background: #393D3D;
   border-radius: 5px;
   padding: 30px;
+  box-shadow:0 0 50px rgba(0, 0, 0, 0.8);
+  background: none repeat scroll 0 0 rgba(100, 100, 50, 0.3);
 }
 section.hide {
   display: none;
@@ -26,39 +32,48 @@ div.row1 {
     padding: 20px 0;
     background: #565656;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 5px 2px #777;
     color: white;
     font-size: 1.5em;
     font-weight: 200;
-    margin-right: 0;
-    // margin-top: 20px;
-    width: 25%;
-    transition: background .3s ease;
+    margin-right: 6px;
+    margin-left: 2px;
+    // width: 25%;/
+    transition: background .3s ease, border-color .3s ease;
     &:hover {
       background: $lightGreen;
-      transition: background .3s ease;
+      border-color: $green;
+      transition: background .3s ease, border-color .3s ease;
     }
     &:focus {
       outline: none;
     }
     &:active {
       box-shadow: inset 2px 2px 5px 1px black;
-      color: green;
+      color: #CADDA0;
+      border-top-color: black;
+      border-left-color: black;
     }
   }
   div.answer {
     @include span-columns(9 of 12);
     text-align: right;
-    height: 90px;
+    height: 75px;
     border: 5px solid black;
     box-shadow: inset 0px 5px 5px 1px;
     border-radius: 5px;
     color: #404145;
-    font-size: 1.5em;
-    padding: 20px 20px 20px 0;
+    font-size: 1.9em;
+    font-weight: 500;
+    padding: 20px 20px 10px 0;
     background: #CADDA0;
-    width: 75%;
+    overflow: auto;
+    // width: 75%;
   }
+}
+div.row2 {
+  margin-top: 10px;
 }
 div.row2,
 div.row3,
@@ -72,17 +87,18 @@ div.row5 {
     padding: 20px 0;
     background: #252525;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 5px 2px #777;
     color: white;
     font-size: 1.5em;
     font-weight: 200;
-    margin: 5px 0;
-    width: 25%;
-    transition: background .3s ease;
-    transition: box-shadow 1s ease;
+    margin: 5px 3px;
+    // width: 25%;
+    transition: background .3s ease, box-shadow 1s ease;
     &:hover {
       background: opacify(grey, .5);
       transition: background .3s ease;
+      border-color: #565656;
     }
     &:focus {
       outline: none;
@@ -90,11 +106,18 @@ div.row5 {
     }
     &:active {
       box-shadow: inset 2px 2px 5px 1px black;
-      color: green;
+      color: #393D3D;
     }
   }
   input.equalBtn {
     background: #FFB023;
+    border-color: #FF9003;
+    transition: background .3s ease, color .3s ease;
+    &:hover{
+      background: #FF9003;
+      color: black;
+      transition: background .3s ease, color .3s ease;
+    }
     &:focus {
       box-shadow: inset 2px 2px 5px 1px black;
     }
@@ -107,9 +130,17 @@ div.row5 {
 #subtBtn {
   color: white;
   background: #FF516A;
-  transition: color .3s ease;
+  transition: color 0s;
+  transition: background .3s ease;
+  border-color:#EE415A;
   &:hover {
-    color: black;
-    transition: color .3s ease;
+    background: opacify(#FF015A, .5);
+    transition: background .3s ease;
+  }
+  &:active {
+    color: #393D3D;
+    transition: color 0s;
+    border-top-color: black;
+    border-left-color: black;
   }
 }
