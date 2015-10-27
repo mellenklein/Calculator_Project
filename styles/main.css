@@ -87,8 +87,7 @@ div.row1 {
     font-size: 1.9em;
     font-weight: 500;
     padding: 20px 20px 10px 0;
-    background: #CADDA0;
-    overflow: auto; }
+    background: #CADDA0; }
     div.row1 div.answer:last-child {
       margin-right: 0; }
 

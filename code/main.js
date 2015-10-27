@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       handleClickEqual(e);
     }
   }
+
   var spaceClear = function(e){
     if(e.keyCode === 32){
       e.preventDefault();
@@ -96,35 +97,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   }
 
-  var handleNumberKeypress = function(e){
-    // This function is currently cancelling out the enter function above so I commented out its eventListener for now.
-    if(e.keyCode === 49){
-      var keyValue = 1;
+  //take the charcode of the event target and print the corresponding value to the box.
+  var numCodes = function(e){
+    var code;
+    if(e.keyCode) {
+      code = e.keyCode;
+    } else if (e.which) {
+      code = e.which
+    };
+    var character = String.fromCharCode(code);
+    console.log(Number(character));
+    // printAnswer.innerHTML += Number(character);
+    if(operator.value === ""){
+      if(num_one.value === ""){
+        printAnswer.innerHTML = Number(character);
+      } else printAnswer.innerHTML += Number(character);
+        num_one.value += Number(character);
+        solution.value = "";
+    } else {
+      num_two.value += Number(character);
+      printAnswer.innerHTML += Number(character);
     }
-    //other keycodes go here//
-      if(operator.value === ""){
-        if(num_one.value === ""){
-          printAnswer.innerHTML = keyValue;
-        } else printAnswer.innerHTML += keyValue;
-          num_one.value += keyValue;
-          solution.value = "";
-      } else {
-        num_two.value += keyValue;
-        printAnswer.innerHTML += keyValue;
-      }
-      e.preventDefault();
   }
 
 
 //---------Click Handler Event Listeners---------//
 // Set the function to run everytime the button is clicked:
 clearBtn.addEventListener('click', handleClickClear);
-addEventListener('keydown', spaceClear)
+document.addEventListener('keydown', spaceClear)
 equalBtn.addEventListener('click', handleClickEqual);
-addEventListener('keydown', enter);
-
-// addEventListener('keydown', handleNumberKeypress);
-
+document.addEventListener('keydown', enter);
+document.addEventListener('keypress', numCodes);
 
 // For each number button (0-9 including .) ->
 //add an event listener so that when any of the number buttons are clicked,
