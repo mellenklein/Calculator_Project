@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   var enter = function(e){
-    if(e.keyCode === 13){
+    if(e.keyCode === 187 || e.keyCode === 13){
       e.preventDefault();
       handleClickEqual(e);
     }
